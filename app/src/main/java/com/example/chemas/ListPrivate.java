@@ -42,12 +42,10 @@ public class ListPrivate extends RecyclerView.Adapter<ListPrivate.ViewHolder> {
     public void setItems(List<Libro> items) { listLibro = items; }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView iconImage;
         TextView tvLibroName, tvLibroEditorial, tvLibroFecha, tvLibroPaginas, tvLibroGeneros, tvLibroAutor;
 
         ViewHolder(View itemView) {
             super(itemView);
-            iconImage = itemView.findViewById(R.id.imagenLibros);
             tvLibroAutor = itemView.findViewById(R.id.tvLibroAutor);
             tvLibroEditorial = itemView.findViewById(R.id.tvLibroEditorial);
             tvLibroFecha = itemView.findViewById(R.id.tvLibroFecha);
@@ -57,10 +55,9 @@ public class ListPrivate extends RecyclerView.Adapter<ListPrivate.ViewHolder> {
         }
 
         void bindData(final Libro item) {
-            //iconImage.setColorFilter(Color.parseColor(item.getColor()), PorterDuff.Mode.SRC_IN);
             tvLibroName.setText(item.getTitulo());
-            tvLibroPaginas.setText(item.getNo_pags());
-            tvLibroAutor.setText(item.getAutor_id());
+            tvLibroPaginas.setText(String.valueOf(item.getAnio_pub()));
+            tvLibroAutor.setText(String.valueOf(item.getAutor_id()));//Pedro o victor del futuro, aqui se tiene que cambiar el autor id por su nombre completo
             tvLibroGeneros.setText(item.getGenero());
             tvLibroFecha.setText(item.getAnio_pub());
             tvLibroEditorial.setText(item.getEditorial());

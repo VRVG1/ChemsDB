@@ -1,49 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cvLibros"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="10dp"
     android:animateLayoutChanges="true"
-    app:cardUseCompatPadding="true"
-    app:cardElevation="4dp"
+    android:orientation="vertical"
     app:cardCornerRadius="20dp"
-    android:layout_margin="10dp">
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:animateLayoutChanges="true"
         android:orientation="vertical">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="6dp">
+
             <ImageView
                 android:id="@+id/imagenLibros"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_gravity="center"
                 android:paddingLeft="14dp"
                 android:paddingRight="14dp"
-                app:srcCompat="@drawable/ic_library_books_black_24dp"
-                android:layout_alignParentLeft="true"/>
+                app:srcCompat="@drawable/ic_auto_stories_black_24dp" />
+
             <LinearLayout
                 android:id="@+id/linearLayout"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="4dp"
-                android:layout_marginTop="2dp"
-                android:orientation="vertical"
                 android:layout_marginLeft="4dp"
+                android:layout_marginTop="2dp"
                 android:layout_toEndOf="@+id/imagenLibros"
                 android:layout_toRightOf="@+id/imagenLibros"
-                >
+                android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/tvLibroName"
                     android:layout_width="match_parent"
@@ -52,7 +55,8 @@
                     android:text="Lo mas pendejo"
                     android:textColor="@color/black"
                     android:textSize="20dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/tvLibroEditorial"
                     android:layout_width="match_parent"
@@ -60,8 +64,8 @@
                     android:layout_marginBottom="2dp"
                     android:text="Editoral"
                     android:textColor="@color/black"
-                    android:textSize="12dp"
-                    />
+                    android:textSize="12dp" />
+
                 <TextView
                     android:id="@+id/tvLibroFecha"
                     android:layout_width="match_parent"
@@ -70,6 +74,7 @@
                     android:text="2021-12-02"
                     android:textColor="@color/black"
                     android:textSize="12dp" />
+
                 <TextView
                     android:id="@+id/tvLibroPaginas"
                     android:layout_width="match_parent"
@@ -78,6 +83,7 @@
                     android:text="Paginas: 666"
                     android:textColor="@color/black"
                     android:textSize="12dp" />
+
                 <TextView
                     android:id="@+id/tvLibroGeneros"
                     android:layout_width="match_parent"
@@ -86,6 +92,7 @@
                     android:text="Plaxogamasexual"
                     android:textColor="@color/black"
                     android:textSize="12dp" />
+
                 <TextView
                     android:id="@+id/tvLibroAutor"
                     android:layout_width="match_parent"

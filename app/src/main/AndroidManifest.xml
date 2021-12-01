@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chemas">
         <activity
+            android:name=".ActivityAutorCUD"
+            android:exported="true" />
+        <activity
+            android:name=".ActivityBookCUD"
+            android:exported="true" />
+        <activity
+            android:name=".ActivityAutor"
+            android:exported="true" />
+        <activity
             android:name=".Activity2"
             android:exported="true" />
         <activity
