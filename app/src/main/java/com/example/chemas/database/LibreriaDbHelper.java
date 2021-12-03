@@ -83,8 +83,13 @@ public class LibreriaDbHelper extends SQLiteOpenHelper {
         );
     }
 
-    public int deleteAutor(Autor autor) {
-        return 0;
+    public int deleteAutor(int id) {
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        return sqLiteDatabase.delete(
+                LibreriaContract.AutoresEntry.TABLE_NAME,
+                LibreriaContract.AutoresEntry._ID + " LIKE ?",
+                new String[]{ String.valueOf(id) }
+        );
     }
 
     public Cursor getTodosAutores() {
@@ -116,6 +121,15 @@ public class LibreriaDbHelper extends SQLiteOpenHelper {
         return sqLiteDatabase.update(
                 LibreriaContract.LibrosEntry.TABLE_NAME,
                 libro.toContentValues(),
+                LibreriaContract.LibrosEntry._ID + " LIKE ?",
+                new String[]{ String.valueOf(id) }
+        );
+    }
+
+    public int deleteLibro(int id) {
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        return sqLiteDatabase.delete(
+                LibreriaContract.LibrosEntry.TABLE_NAME,
                 LibreriaContract.LibrosEntry._ID + " LIKE ?",
                 new String[]{ String.valueOf(id) }
         );

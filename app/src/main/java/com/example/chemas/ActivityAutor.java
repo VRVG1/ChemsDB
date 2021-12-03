@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.chemas.database.LibreriaContract;
 import com.example.chemas.database.LibreriaDbHelper;
@@ -81,5 +82,21 @@ public class ActivityAutor extends AppCompatActivity {
         intent.putExtra("Edad", edad);
 
         startActivity(intent);
+    }
+
+    public void deleteAutor(int id) {
+        if (mDbHelper.deleteAutor(id) == 1) {
+            Toast.makeText(
+                    this,
+                    "Autor eliminado EXITOSAMENTE",
+                    Toast.LENGTH_SHORT
+            ).show();
+        } else {
+            Toast.makeText(
+                    this,
+                    "Autor no pudo ser eliminado",
+                    Toast.LENGTH_SHORT
+            ).show();
+        }
     }
 }

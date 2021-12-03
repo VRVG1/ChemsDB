@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -24,10 +25,11 @@ public class ListPrivateAutor extends RecyclerView.Adapter<ListPrivateAutor.View
     @Override
     public int getItemCount() { return listAutor.size(); }
 
+    @NonNull
     @Override
-    public ListPrivateAutor.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = layoutInflater.inflate(R.layout.list_book, null);
-        return new ListPrivateAutor.ViewHolder(view);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = layoutInflater.inflate(R.layout.list_autor, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -41,7 +43,7 @@ public class ListPrivateAutor extends RecyclerView.Adapter<ListPrivateAutor.View
         private int id, edad;
         private String nombre, apellido, nacionalidad;
 
-        ImageView iconImage;
+        ImageView iconImage, imBorrar;
         TextView tvAutorFullName, tvAutorAge, AutorNacionalidad;
 
         ViewHolder(View itemView) {
@@ -50,12 +52,21 @@ public class ListPrivateAutor extends RecyclerView.Adapter<ListPrivateAutor.View
             tvAutorFullName = itemView.findViewById(R.id.tvAutorFullName);
             tvAutorAge = itemView.findViewById(R.id.tvAutorAge);
             AutorNacionalidad = itemView.findViewById(R.id.AutorNacionalidad);
+            imBorrar = (ImageView) itemView.findViewById(R.id.imBorrar);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     ActivityAutor activity = (ActivityAutor) context;
                     activity.initUpdateAutorActivity(id, nombre, apellido, nacionalidad, edad);
+                }
+            });
+
+            imBorrar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ActivityAutor activity = (ActivityAutor) context;
+                    activity.deleteAutor(id);
                 }
             });
         }
@@ -68,8 +79,9 @@ public class ListPrivateAutor extends RecyclerView.Adapter<ListPrivateAutor.View
             nacionalidad = item.getNacionalidad();
 
             //iconImage.setColorFilter(Color.parseColor(item.getColor()), PorterDuff.Mode.SRC_IN);
-            tvAutorFullName.setText(nombre + apellido);
-            tvAutorAge.setText(edad);
+            String nombreCompleto = nombre + " " + apellido;
+            tvAutorFullName.setText(nombreCompleto);
+            tvAutorAge.setText(String.valueOf(edad));
             AutorNacionalidad.setText(nacionalidad);
         }
     }

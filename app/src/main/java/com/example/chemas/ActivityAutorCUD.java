@@ -15,7 +15,7 @@ public class ActivityAutorCUD extends AppCompatActivity {
     private int id, edad;
     private boolean flag;
     private String nombre, apellidos, nacionalidad;
-    EditText etApellidos, etNacionalidad, etNombre;
+    EditText etApellidos, etNacionalidad, etNombre, etEdad;
     LibreriaDbHelper mDbHelper;
 
     @Override
@@ -26,7 +26,7 @@ public class ActivityAutorCUD extends AppCompatActivity {
         etNombre = (EditText) findViewById(R.id.etNombre);
         etApellidos = (EditText) findViewById(R.id.etApellidos);
         etNacionalidad = (EditText) findViewById(R.id.etNacionalidad);
-        // TODO: Instanciar al etEdad
+        etEdad = (EditText) findViewById(R.id.etEdad);
 
         mDbHelper = new LibreriaDbHelper(this);
 
@@ -43,7 +43,7 @@ public class ActivityAutorCUD extends AppCompatActivity {
             etNombre.setText(nombre);
             etApellidos.setText(apellidos);
             etNacionalidad.setText(nacionalidad);
-            // TODO: Agregar texto al etEdad en esta linea
+            etEdad.setText(String.valueOf(edad));
         }
     }
 
@@ -52,7 +52,7 @@ public class ActivityAutorCUD extends AppCompatActivity {
         apellidos = etApellidos.getText().toString();
         nacionalidad = etNacionalidad.getText().toString();
         //TODO: Cambiar las comillas dobles por la referencia al EditText etEdad
-        edad = Integer.parseInt("".toString());
+        edad = Integer.parseInt(etEdad.getText().toString());
 
         Autor autor = new Autor(0, edad, nombre,
                 apellidos, nacionalidad);
@@ -75,6 +75,7 @@ public class ActivityAutorCUD extends AppCompatActivity {
             etNombre.setText("");
             etApellidos.setText("");
             etNacionalidad.setText("");
+            etEdad.setText("");
         } else {
             Toast.makeText(
                     this,
