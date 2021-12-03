@@ -13,7 +13,7 @@
         <entry key="app/src/main/res/drawable/buttonradius.xml" value="0.35625" />
         <entry key="app/src/main/res/drawable/ic_library_books_black_24dp.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/activity_2.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_autor.xml" value="0.32447916666666665" />
+        <entry key="app/src/main/res/layout/activity_autor.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_autor_cud.xml" value="0.34010416666666665" />
         <entry key="app/src/main/res/layout/activity_book_cud.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
