@@ -74,6 +74,28 @@ public class ActivityBookCUD extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, generos);
 
+        if (!flag) {
+            int selectedItem = 0;
+            switch (genero) {
+                case "Misterio":
+                    selectedItem = 0;
+                    break;
+                case "Fantasia":
+                    selectedItem = 1;
+                    break;
+                case "Ciencia Ficción":
+                    selectedItem = 2;
+                    break;
+                case "Terror":
+                    selectedItem = 3;
+                    break;
+                case "Romance":
+                    selectedItem = 4;
+                    break;
+            }
+            spGeneros.setSelection(selectedItem);
+        }
+
         spGeneros.setAdapter(adapter);
         spGeneros.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -113,6 +135,10 @@ public class ActivityBookCUD extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, nombresAutores);
         spAutor.setAdapter(adapter);
+
+        if (!flag) {
+            //spAutor.setSelection();
+        }
         spAutor.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

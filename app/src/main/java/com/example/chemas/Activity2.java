@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.chemas.database.LibreriaContract;
 import com.example.chemas.database.LibreriaDbHelper;
@@ -71,7 +72,7 @@ public class Activity2 extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void initUpdateAutorActivity(int id, int idAutor, String titulo, String editorial,
+    public void initUpdateLibroActivity(int id, int idAutor, String titulo, String editorial,
                                         String genero, int anioPub, int noPags) {
         Intent intent = new Intent(this, ActivityBookCUD.class);
         intent.putExtra("Flag", false);
@@ -86,7 +87,19 @@ public class Activity2 extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void deleteAutor(int id) {
-        if (mDbHelper.delete)
+    public void deleteLibro(int id) {
+        if (mDbHelper.deleteLibro(id) == 1) {
+            Toast.makeText(
+                    this,
+                    "Libro eliminado EXITOSAMENTE",
+                    Toast.LENGTH_SHORT
+            ).show();
+        } else {
+            Toast.makeText(
+                    this,
+                    "Libro no pudo ser eliminado.",
+                    Toast.LENGTH_SHORT
+            ).show();
+        }
     }
 }

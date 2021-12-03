@@ -92,6 +92,20 @@ public class LibreriaDbHelper extends SQLiteOpenHelper {
         );
     }
 
+    public Cursor getAutorById(int id) {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        Cursor c = sqLiteDatabase.query(
+                LibreriaContract.AutoresEntry.TABLE_NAME,
+                null,
+                LibreriaContract.AutoresEntry._ID + " LIKE ?",
+                new String[]{ String.valueOf(id) },
+                null,
+                null,
+                null
+        );
+        return c;
+    }
+
     public Cursor getTodosAutores() {
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
         Cursor c = sqLiteDatabase.query(
