@@ -38,6 +38,9 @@ public class ListPrivateAutor extends RecyclerView.Adapter<ListPrivateAutor.View
     public void setItems(List<Autor> items) { listAutor = items; }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        private int id, edad;
+        private String nombre, apellido, nacionalidad;
+
         ImageView iconImage;
         TextView tvAutorFullName, tvAutorAge, AutorNacionalidad;
 
@@ -47,13 +50,27 @@ public class ListPrivateAutor extends RecyclerView.Adapter<ListPrivateAutor.View
             tvAutorFullName = itemView.findViewById(R.id.tvAutorFullName);
             tvAutorAge = itemView.findViewById(R.id.tvAutorAge);
             AutorNacionalidad = itemView.findViewById(R.id.AutorNacionalidad);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ActivityAutor activity = (ActivityAutor) context;
+                    activity.initUpdateAutorActivity(id, nombre, apellido, nacionalidad, edad);
+                }
+            });
         }
 
         void bindData(final Autor item) {
+            id = item.getAutor_id();
+            edad = item.getEdad();
+            nombre = item.getNombre();
+            apellido = item.getApellido();
+            nacionalidad = item.getNacionalidad();
+
             //iconImage.setColorFilter(Color.parseColor(item.getColor()), PorterDuff.Mode.SRC_IN);
-            tvAutorFullName.setText(item.getNombre() + item.getApellido());
-            tvAutorAge.setText(item.getEdad());
-            AutorNacionalidad.setText(item.getNacionalidad());
+            tvAutorFullName.setText(nombre + apellido);
+            tvAutorAge.setText(edad);
+            AutorNacionalidad.setText(nacionalidad);
         }
     }
 }

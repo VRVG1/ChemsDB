@@ -1,5 +1,9 @@
 package com.example.chemas;
 
+import android.content.ContentValues;
+
+import com.example.chemas.database.LibreriaContract;
+
 public class Autor {
     private int autor_id, edad;
     private String nombre, apellido, nacionalidad;
@@ -49,5 +53,15 @@ public class Autor {
 
     public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
+    }
+
+    public ContentValues toContentValues() {
+        ContentValues values = new ContentValues();
+        values.put(LibreriaContract.AutoresEntry.COLUMN_NAME_NOMBRE, nombre);
+        values.put(LibreriaContract.AutoresEntry.COLUMN_NAME_APELLIDO, apellido);
+        values.put(LibreriaContract.AutoresEntry.COLUMN_NAME_EDAD, edad);
+        values.put(LibreriaContract.AutoresEntry.COLUMN_NAME_NACIONALIDAD, nacionalidad);
+
+        return values;
     }
 }

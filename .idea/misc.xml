@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/pnrv2/Documents/Programas/AndroidStudioProjects/ChemsDB/app/src/main/res/layout/activity_2.xml" value="0.25" />
+        <entry key="..\:/pnrv2/Documents/Programas/AndroidStudioProjects/ChemsDB/app/src/main/res/layout/activity_autor.xml" value="0.25" />
+        <entry key="..\:/pnrv2/Documents/Programas/AndroidStudioProjects/ChemsDB/app/src/main/res/layout/activity_autor_cud.xml" value="0.22447916666666667" />
+        <entry key="..\:/pnrv2/Documents/Programas/AndroidStudioProjects/ChemsDB/app/src/main/res/layout/activity_book_cud.xml" value="0.22447916666666667" />
+        <entry key="..\:/pnrv2/Documents/Programas/AndroidStudioProjects/ChemsDB/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
+        <entry key="..\:/pnrv2/Documents/Programas/AndroidStudioProjects/ChemsDB/app/src/main/res/layout/list_autor.xml" value="0.33" />
+        <entry key="..\:/pnrv2/Documents/Programas/AndroidStudioProjects/ChemsDB/app/src/main/res/layout/list_book.xml" value="0.5" />
         <entry key="app/src/main/res/drawable/buttonradius.xml" value="0.35625" />
         <entry key="app/src/main/res/drawable/ic_library_books_black_24dp.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/activity_2.xml" value="0.25" />

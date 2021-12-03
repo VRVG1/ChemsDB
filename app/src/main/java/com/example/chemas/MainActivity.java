@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openAutor(View view){
-
+        Intent intent = new Intent(this, ActivityAutor.class);
+        startActivity(intent);
     }
 
     public void setBtAbout(View view) {

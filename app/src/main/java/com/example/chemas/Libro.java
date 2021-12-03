@@ -1,10 +1,15 @@
 package com.example.chemas;
 
+import android.content.ContentValues;
+
+import com.example.chemas.database.LibreriaContract;
+
 public class Libro {
     private int id_libro, no_pags, autor_id;
     private String titulo, genero, editorial, anio_pub;
 
-    public Libro(int id_libro, int no_pags, int autor_id, String titulo, String genero, String editorial, String anio_pub) {
+    public Libro(int id_libro, int no_pags, int autor_id, String titulo, String genero,
+                 String editorial, String anio_pub) {
         this.id_libro = id_libro;
         this.no_pags = no_pags;
         this.autor_id = autor_id;
@@ -68,5 +73,17 @@ public class Libro {
 
     public void setAnio_pub(String anio_pub) {
         this.anio_pub = anio_pub;
+    }
+
+    public ContentValues toContentValues() {
+        ContentValues values = new ContentValues();
+        values.put(LibreriaContract.LibrosEntry.COLUMN_NAME_NO_PAGS, no_pags);
+        values.put(LibreriaContract.LibrosEntry.COLUMN_NAME_LIBRO_AUTOR_ID, autor_id);
+        values.put(LibreriaContract.LibrosEntry.COLUMN_NAME_TITULO, titulo);
+        values.put(LibreriaContract.LibrosEntry.COLUMN_NAME_GENERO, genero);
+        values.put(LibreriaContract.LibrosEntry.COLUMN_NAME_EDITORIAL, editorial);
+        values.put(LibreriaContract.LibrosEntry.COLUMN_NAME_ANIO_PUB, anio_pub);
+
+        return values;
     }
 }
